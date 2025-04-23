@@ -1,4 +1,4 @@
-import BasketList from "../components/BasketList";
+import BasketList from "../Components/BasketList";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 

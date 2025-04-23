@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ProductList from "../components/ProductList";
+import ProductList from "../Components/ProductList";
 import Loading from "../components/Loading";
 import { Link } from "react-router-dom";
 
@@ -36,7 +36,7 @@ export default function HomePage() {
   }, [searchInput, products]);
 
   return (
-    <div className="flex flex-col items-center p-4">
+    <div className="flex flex-col items-center p-4 bg-gray-700">
       <input
         type="text"
         value={searchInput}
@@ -45,10 +45,7 @@ export default function HomePage() {
         placeholder="Search For a Product"
       />
 
-      <Link
-        to="/basket"
-        className="mt-4 text-blue-600 underline font-semibold"
-      >
+      <Link to="/basket" className="mt-4 text-blue-600 underline font-semibold">
         🛒 Go to Basket ({basket.length})
       </Link>
 
