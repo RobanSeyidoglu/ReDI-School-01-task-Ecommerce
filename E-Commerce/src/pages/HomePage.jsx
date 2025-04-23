@@ -18,13 +18,23 @@ export default function HomePage() {
   }, [basket]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => {
+    const fetchProducts = async () => {
+      try {
+        const res = await fetch("https://fakestoreapi.com/products");
+        if (!res.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        const json = await res.json();
         setProducts(json);
         setFilteredProducts(json);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchProducts();
   }, []);
 
   useEffect(() => {
@@ -41,7 +51,7 @@ export default function HomePage() {
         type="text"
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
-        className="w-lg text-center text-blue-500 text-2xl outline-0 border-0 focus:border-2 border-blue-500 font-bold"
+        className="w-lg text-center text-blue-500 text-2xl outline-0 border-2  border-blue-500 font-bold"
         placeholder="Search For a Product"
       />
 
