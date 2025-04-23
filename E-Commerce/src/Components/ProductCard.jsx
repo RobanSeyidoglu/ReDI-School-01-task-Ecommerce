@@ -21,7 +21,7 @@ export default function ProductCard({ product, onAdd }) {
         className="w-32 h-32 object-contain mb-2"
         loading="lazy"
       />
-      <h2 className="text-lg font-semibold text-wrap w-m">{product.title}</h2>
+      <h2 className="text-lg font-semibold truncate w-full">{product.title}</h2>
       <h1 className="font-bold text-blue-400">{product.price}$</h1>
 
       <button
