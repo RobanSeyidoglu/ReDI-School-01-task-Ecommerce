@@ -2,7 +2,7 @@ export default function BasketItem({ item, onDelete }) {
   return (
     <div className=" bg-cyan-950 p-2 rounded-md shadow text-center flex flex-col w-m items-center">
       <img className="w-30 h-40" src={item.image} alt="" />
-      <h2 className="text-sm text-wrap w-sm font-semibold">{item.title}</h2>
+      <h2 className="text-m  truncate w-sm font-semibold">{item.title}</h2>
       <p className="text-blue-600 font-bold text-sm">Price: {item.price}$</p>
       <button
         onClick={onDelete}
@@ -10,7 +10,6 @@ export default function BasketItem({ item, onDelete }) {
       >
         Delete Product
       </button>
-     
     </div>
   );
 }
